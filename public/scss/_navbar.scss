@@ -1,0 +1,50 @@
+@import 'color.scss';
+
+// ! NAVBAR STYLES 
+// & APPLY FLEX TO THE NAVBAR
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-bottom: 1px solid #ccc;
+    color: $dark;
+    h1{
+       font-size: xx-large; 
+    }
+    // & NAVBAR BUTTONS STYLES WITH HOVER AND FOCUS EFFECTS
+    #navbar-buttons{
+        button{
+            outline: 0;
+            grid-gap: 8px;
+            align-items: center;
+            background: 0 0;
+            border: 1px solid $light;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-flex;
+            flex-shrink: 0;
+            font-size: 16px;
+            gap: 8px;
+            justify-content: center;
+            line-height: 1.5;
+            overflow: hidden;
+            padding: 12px 16px;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            transition: all .10s ease-out;
+            white-space: nowrap;
+            margin: 10px;
+        }
+        :hover {
+            box-shadow: 3px 3px 0 $light;
+            transform: translate(-3px,-3px);
+        }
+        :focus-visible{
+            outline-offset: 1px;
+        }
+        margin: 10px;
+    }
+}
