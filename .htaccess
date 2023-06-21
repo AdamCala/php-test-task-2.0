@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /<test-task-php2.0>/
+RewriteRule ^index\.php＄ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /test-task-php2.0/index.php [L]
