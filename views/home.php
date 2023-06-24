@@ -1,3 +1,6 @@
+<?php
+    require 'autoloader.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,11 @@
         <h1>Product List</h1>
     </nav>
     <main>
-
+        <?php
+            $test = new classes\ProductDisplay;
+            $product_entry = $test->displayProduct();
+            echo $product_entry;
+        ?>
     </main>
     <footer>
         Scandiweb Test assignment

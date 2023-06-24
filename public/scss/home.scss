@@ -1,2 +1,21 @@
 @import 'navbar';
 @import 'footer';
+@import 'color';
+
+main{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+.product-entry-div{
+    border: 1px solid $light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    .delete-checkbox{
+        float: left;
+    }
+}
