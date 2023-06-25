@@ -1,5 +1,5 @@
 <?php
-    require '../autoloader.php';
+    require 'autoloader.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,10 @@
 <body>
     <nav>
         <h1>Product Add</h1>
+        <div id="navbar-buttons">
+            <button id="save-button-action">SAVE</button>
+            <button id="cancel-button-link">CANCEL</button>
+        </div>
     </nav>
     <main>
 
