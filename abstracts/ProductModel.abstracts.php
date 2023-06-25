@@ -13,7 +13,8 @@
                     products.Name,
                     products.Price,
                     productattributes.AttributeName,
-                    productattributes.Value 
+                    productattributes.Value,
+                    productattributes.Unit
                 FROM products 
                 INNER JOIN productattributes 
                 ON products.SKU = productattributes.SKU";
@@ -31,7 +32,8 @@
                         'SKU' => $sku,
                         'Name' => $row['Name'],
                         'Price' => $row['Price'],
-                        'Attributes' => array()
+                        'Attributes' => array(),
+                        'Unit' => $row['Unit']
                     );
                 }
                 $attributeName = $row['AttributeName'];

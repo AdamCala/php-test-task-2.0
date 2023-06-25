@@ -23,7 +23,7 @@
                                 <?= implode('x', $product_entry['Attributes']); ?>
                             <?php else: ?>
                                 <?php foreach ($product_entry['Attributes'] as $Attribute => $value): ?>
-                                    <?= $Attribute; ?>:  <?= $value; ?>
+                                    <?= $Attribute; ?>:  <?= $value; ?> <?= $product_entry['Unit']; ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </div>
