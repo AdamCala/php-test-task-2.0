@@ -43,5 +43,16 @@
             $this->closeConnection();
             return $rows;
         }
+        public function deleteProducts($placeholders){
 
+            $this->openConnection();
+
+            $sql = "DELETE FROM products WHERE SKU IN ($placeholders)";
+
+            $stmt = $this->databaseConnection->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $this->closeConnection();
+            return $result;
+        }
     }

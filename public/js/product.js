@@ -1,3 +1,4 @@
+// & LINK TO THE PRODUCT LIST PAGE
 const add_button_link = document.getElementById('cancel-button-link');
 
 add_button_link.addEventListener('click',()=>{
