@@ -12,6 +12,10 @@
 <body>
     <nav>
         <h1>Product List</h1>
+        <div id="navbar-buttons">
+            <button>ADD</button>
+            <button>MASS DELETE</button>
+        </div>
     </nav>
     <main>
         <?php

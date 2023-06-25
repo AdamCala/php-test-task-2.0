@@ -33,8 +33,8 @@ nav {
       white-space: nowrap;
       margin: 10px; }
     nav #navbar-buttons :hover {
-      box-shadow: 3px 3px 0 #cccccc;
-      transform: translate(-3px, -3px); }
+      box-shadow: 1px 1px 0 #cccccc;
+      transform: translate(-1px, -1px); }
     nav #navbar-buttons :focus-visible {
       outline-offset: 1px; }
 
@@ -54,17 +54,33 @@ main form {
   flex-direction: row; }
 
 .product-entry-div {
+  transition: all .10s ease-out;
+  border-radius: 4px;
+  cursor: pointer;
   width: 220px;
   border: 1px solid #cccccc;
   padding: 10px;
   margin: 10px; }
   .product-entry-div div {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    color: #2c3e50; }
+    .product-entry-div div p {
+      margin: 9px; }
+  .product-entry-div:hover {
+    box-shadow: 1px 1px 0 #cccccc;
+    transform: translate(-1px, -1px); }
+  .product-entry-div:focus-visible {
+    outline-offset: 1px; }
 
 .delete-checkbox {
   margin-left: 10px;
   margin-top: 10px; }
+  .delete-checkbox:hover {
+    box-shadow: 1px 1px 0 #cccccc;
+    transform: translate(-1px, -1px); }
+  .delete-checkbox:focus-visible {
+    outline-offset: 1px; }

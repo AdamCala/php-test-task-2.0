@@ -39,8 +39,8 @@ nav{
             margin: 10px;
         }
         :hover {
-            box-shadow: 3px 3px 0 $light;
-            transform: translate(-3px,-3px);
+            box-shadow: 1px 1px 0 $light;
+            transform: translate(-1px,-1px);
         }
         :focus-visible{
             outline-offset: 1px;
