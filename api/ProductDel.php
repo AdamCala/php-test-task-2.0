@@ -1,7 +1,10 @@
 <?php
     include 'autoloader.php';
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST");
+    header("Access-Control-Allow-Headers: Content-Type");
     header('Content-Type: application/json');
 
-    if(isset($_POST['SKU'])){
-        var_dump($_POST['SKU']);
-    }
+    $jsonPayload = file_get_contents('php://input');
+    $data = json_decode($jsonPayload, true);
+    var_dump($data);
