@@ -1,4 +1,11 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url("fonts/tidy-hand.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 nav {
+  font-family: 'CustomFont', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +17,7 @@ nav {
   nav h1 {
     font-size: xx-large; }
   nav #navbar-buttons {
+    font-family: 'CustomFont', sans-serif;
     margin: 10px; }
     nav #navbar-buttons button {
       outline: 0;
@@ -38,7 +46,14 @@ nav {
     nav #navbar-buttons :focus-visible {
       outline-offset: 1px; }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url("fonts/tidy-hand.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 footer {
+  font-family: 'CustomFont', sans-serif;
   text-align: center;
   position: fixed;
   left: 10;
@@ -48,10 +63,18 @@ footer {
   padding: 20px;
   border-top: 1px solid #ccc; }
 
-main form {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row; }
+@font-face {
+  font-family: 'CustomFont';
+  src: url("fonts/tidy-hand.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+main {
+  font-family: 'CustomFont', sans-serif; }
+  main form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row; }
 
 .product-entry-div {
   transition: all .10s ease-out;

@@ -20,8 +20,8 @@
     </nav>
     <main>
         <?php
-            $test = new classes\ProductDisplay;
-            $test->displayProduct();
+            $products = new classes\ProductDisplay;
+            $products->displayProduct();
         ?>
     </main>
     <footer>

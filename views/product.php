@@ -19,7 +19,10 @@
         </div>
     </nav>
     <main>
-
+        <?php
+            $form = new classes\FormDisplay;
+            $form->displayForm();
+        ?>
     </main>
     <footer>
         Scandiweb Test assignment

@@ -1,8 +1,10 @@
 @import 'color.scss';
+@import 'fonts.scss';
 
 // ! NAVBAR STYLES 
 // & APPLY FLEX TO THE NAVBAR
 nav{
+    font-family: 'CustomFont', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,6 +18,7 @@ nav{
     }
     // & NAVBAR BUTTONS STYLES WITH HOVER AND FOCUS EFFECTS
     #navbar-buttons{
+        font-family: 'CustomFont', sans-serif;
         button{
             outline: 0;
             grid-gap: 8px;

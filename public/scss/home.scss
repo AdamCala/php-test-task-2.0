@@ -1,8 +1,10 @@
 @import 'navbar';
 @import 'footer';
 @import 'color';
+@import 'fonts';
 
 main{
+    font-family: 'CustomFont', sans-serif;
     form{
         display: flex;
         justify-content: flex-start;
