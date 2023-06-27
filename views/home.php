@@ -21,8 +21,7 @@
     <main>
         <?php
             $test = new classes\ProductDisplay;
-            $product_entry = $test->displayProduct();
-            echo $product_entry;
+            $test->displayProduct();
         ?>
     </main>
     <footer>

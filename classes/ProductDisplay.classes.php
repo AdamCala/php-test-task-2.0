@@ -32,6 +32,6 @@
             </form>
             <?php
             $productsGrid = ob_get_clean();
-            return $productsGrid;
+            echo $productsGrid;
         }
     }

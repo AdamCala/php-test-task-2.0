@@ -8,7 +8,6 @@
         public function getProducts(){
             
             $this->openConnection();
-
             $sql = "SELECT products.SKU,
                     products.Name,
                     products.Price,
@@ -43,16 +42,21 @@
             $this->closeConnection();
             return $rows;
         }
-        public function deleteProducts($placeholders){
+
+        public function deleteProducts($placeholders,$sku_values){
 
             $this->openConnection();
-
             $sql = "DELETE FROM products WHERE SKU IN ($placeholders)";
 
             $stmt = $this->databaseConnection->prepare($sql);
+
+            $paramTypes = str_repeat("s", count($sku_values));
+            $stmt->bind_param($paramTypes, ...$sku_values);
+
             $stmt->execute();
             $result = $stmt->get_result();
             $this->closeConnection();
+
             return $result;
         }
     }
