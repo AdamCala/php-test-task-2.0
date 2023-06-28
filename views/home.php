@@ -9,6 +9,7 @@
     <title>Product List</title>
     <link rel="stylesheet" href="public\css\home.css">
     <script src="public\js\home.js" defer></script>
+    <script src="public\js\api\home_api.js" defer></script>
 </head>
 <body>
     <nav>

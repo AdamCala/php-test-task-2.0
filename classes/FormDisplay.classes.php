@@ -21,7 +21,7 @@
                 </div>
                 <div class="a-type-div">
                     <label for="price-input">Price ($)</label>
-                    <input type="number" name="name" id="price-input">
+                    <input type="number" name="price" id="price-input">
                 </div>
                 <div class="a-type-div">
                     <label for="productType-input">Type Switcher</label>
@@ -38,20 +38,20 @@
                 <div id='Furniture-input-spec' class="hidden input-spec">
                     <div class="a-type-div">
                         <label for="height-input">Height (CM)</label>
-                        <input type="number" name="size" id="height-input">
+                        <input type="number" name="height" id="height-input">
                     </div>
                     <div class="a-type-div">
                         <label for="width-input">Width (CM)</label>
-                        <input type="number" name="size" id="width-input">
+                        <input type="number" name="width" id="width-input">
                     </div>
                     <div class="a-type-div">
                         <label for="length-input">Length (CM)</label>
-                        <input type="number" name="size" id="length-input"> 
+                        <input type="number" name="length" id="length-input"> 
                     </div>
                 </div>
                 <div id='Book-input-spec' class="hidden input-spec a-type-div">
                     <label for="weight-input">Weight (KG)</label>
-                    <input type="number" name="size" id="weight-input">
+                    <input type="number" name="weight" id="weight-input">
                 </div>
             </form>
             <?php

@@ -9,6 +9,7 @@
     <title>Add Product</title>
     <link rel="stylesheet" href="public\css\product.css">
     <script src="public\js\product.js" defer></script>
+    <script src="public\js\api\product_api.js" defer></script>
 </head>
 <body>
     <nav>

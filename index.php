@@ -20,6 +20,10 @@ switch ($baseUri) {
     case '/api/del':
         require __DIR__ . '/api/ProductDel.php';
         break;
+
+    case '/api/add':
+        require __DIR__ . '/api/ProductAdd.php';
+        break;
     
     default:
         http_response_code(404);
