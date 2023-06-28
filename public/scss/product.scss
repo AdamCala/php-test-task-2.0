@@ -3,31 +3,35 @@
 @import 'color';
 @import 'fonts';
 
-main{
-    form{
-        div{
-            font-size: large;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row;
-            width: 15%;
-            margin: 10px;
-            color: $dark;
-            font-family: 'CustomFont', sans-serif;
-            input, select{
-                transition: all .10s ease-out;
-                border-radius: 4px;
-                cursor: pointer;
-                border: 1px solid $light;
-                height: 25px;
-            }
-            select{
-                font-size:medium;
-            }
-        }
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.a-type-div{
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 15%;
+    margin: 10px;
+    color: $dark;
+    font-family: 'CustomFont', sans-serif;
+    input, select{
+        transition: all .10s ease-out;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid $light;
+        height: 25px;
     }
+    select{
+        font-size:medium;
+    }
+}
+
+.hidden{
+    display: none !important;
 }

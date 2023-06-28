@@ -69,25 +69,29 @@ footer {
   font-weight: normal;
   font-style: normal; }
 
-main form {
+form {
   display: flex;
   flex-direction: column;
   justify-content: center; }
-  main form div {
-    font-size: large;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 15%;
-    margin: 10px;
-    color: #2c3e50;
-    font-family: 'CustomFont', sans-serif; }
-    main form div input, main form div select {
-      transition: all .10s ease-out;
-      border-radius: 4px;
-      cursor: pointer;
-      border: 1px solid #cccccc;
-      height: 25px; }
-    main form div select {
-      font-size: medium; }
+
+.a-type-div {
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 15%;
+  margin: 10px;
+  color: #2c3e50;
+  font-family: 'CustomFont', sans-serif; }
+  .a-type-div input, .a-type-div select {
+    transition: all .10s ease-out;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    height: 25px; }
+  .a-type-div select {
+    font-size: medium; }
+
+.hidden {
+  display: none !important; }
