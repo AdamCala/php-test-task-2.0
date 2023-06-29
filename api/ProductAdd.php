@@ -5,5 +5,6 @@
     header("Access-Control-Allow-Headers: Content-Type");
     header('Content-Type: application/json');
 
-    $r = file_get_contents('php://input');
-    var_dump(json_decode($r, true));
+    $validation = new classes\ProductValidation();
+    $test = $validation->runValidation();
+    var_dump($test);
