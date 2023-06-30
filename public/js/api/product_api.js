@@ -25,8 +25,8 @@ save_button_action.addEventListener('click', () => {
 
     // ^ Itarate over the input values and if the value has to be a number check if it is a number
     for (let entry of formData.entries()) {
-        if(entry[0] in numberElements){
-            if(isNaN(Number(entry[1]))){
+        if (numberElementsArray.includes(entry[0])) {
+        if (isNaN(Number(entry[1]))) {
                 error = true;
             }
         }

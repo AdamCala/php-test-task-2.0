@@ -15,7 +15,7 @@
                     productattributes.Value,
                     productattributes.Unit
                 FROM products 
-                INNER JOIN productattributes 
+                INNER JOIN productattributes
                 ON products.SKU = productattributes.SKU";
 
             $stmt = $this->databaseConnection->prepare($sql);
@@ -59,4 +59,45 @@
 
             return $result;
         }
+
+        public function addProducts($array) {
+
+            $this->openConnection();
+
+            $sku = $array['sku'];
+            $name = $array['name'];
+            $price = $array['price'];
+            $productType = $array['productType'];
+            $unit = $array['unit'];
+
+            // Prepare the SQL statement for inserting into the "products" table
+            $sql ="INSERT INTO products (SKU, Name, Price) VALUES (?, ?, ?)";
+            $productStatement = $this->databaseConnection->prepare($sql);
+            $productStatement->bind_param("sss", $sku, $name, $price);
+            $productStatement->execute();
+
+            // Prepare the SQL statement for inserting into the "productattributes" table
+            $sql2 = "INSERT INTO productattributes (SKU, value, AttributeName, Unit) VALUES (?, ?, ?, ?)";
+            $attributeStatement = $this->databaseConnection->prepare($sql2);
+
+            // Iterate over the remaining attributes in the array
+            foreach ($array as $attributeName => $value) {
+                // Skip the known attributes
+                if ($attributeName == 'sku' || $attributeName == 'name' || $attributeName == 'price' || $attributeName == 'unit' || $attributeName == 'productType') {
+                    continue;
+                }
+                $floatvalue = floatval($value);
+                // Insert the attribute into the "productattributes" table
+                $attributeStatement->bind_param("sdss", $sku, $floatvalue, $attributeName, $unit);
+                $attributeStatement->execute();
+            }
+
+            // Close the prepared statements
+            $productStatement->close();
+            $attributeStatement->close();
+            $this->closeConnection();
+        }      
+
     }
+    
+

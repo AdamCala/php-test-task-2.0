@@ -5,6 +5,6 @@
     header("Access-Control-Allow-Headers: Content-Type");
     header('Content-Type: application/json');
 
-    $validation = new classes\ProductValidation();
-    $test = $validation->runValidation();
+    $validation = new classes\ProductAdd();
+    $test = $validation->addProductCheck();
     var_dump($test);

@@ -34,11 +34,13 @@
                 <div id="DVD-input-spec" class="hidden input-spec a-type-div">
                     <label for="size-input">Size (MB)</label>
                     <input type="text" name="size" id="size-input" class="number-input">
+                    <input type="hidden" name="unit" value="MB" class="unit">
                 </div>
                 <div id='Furniture-input-spec' class="hidden input-spec">
                     <div class="a-type-div">
                         <label for="height-input">Height (CM)</label>
                         <input type="text" name="height" id="height-input" class="number-input">
+                        <input type="hidden" name="unit" value="CM" class="unit">
                     </div>
                     <div class="a-type-div">
                         <label for="width-input">Width (CM)</label>
@@ -52,6 +54,7 @@
                 <div id='Book-input-spec' class="hidden input-spec a-type-div">
                     <label for="weight-input">Weight (KG)</label>
                     <input type="text" name="weight" id="weight-input" class="number-input">
+                    <input type="hidden" name="unit" value="KG" class="unit">
                 </div>
             </form>
             <p id="error-container"></p>

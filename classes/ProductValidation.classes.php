@@ -7,30 +7,27 @@
     class ProductValidation{
 
         private $errors;
-        private $array;
 
+        // initialize array for the errors
         function __construct(){
             $this->errors = array();
-            $input = file_get_contents('php://input');
-            $this->array = (json_decode($input, true));
         }
 
-        private function checkEmpty(){
-            foreach ($this->array as $key => $value) {
+        // if the array has an empty value add the appropriate arror message to the errors array and break the loop
+        private function checkEmpty($array){
+            foreach ($array as $key => $value) {
                 if (empty($value)) {
                     array_push($this->errors,'Please, submit required data');
+                    return;
                     }
                 }
             }
         
-        public function runValidation(){
-            var_dump($this->array);
-            $this->checkEmpty();
+        // run the checkEmpty method and return the array
+        public function runValidation($array){
+            $this->checkEmpty($array);
             if($this->errors){
                 return $this->errors;
-            }else{
-                return true;
-            }
+             }
         }
-        
     }

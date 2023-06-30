@@ -17,12 +17,14 @@ const categoryDivs = document.getElementsByClassName('input-spec');
 
 // Function to disable the form inputs inside the specified div
 const disableFormInputs = (div) => {
-  const inputs = div.getElementsByTagName('input');
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].value = ''; // Clear input value
-    inputs[i].disabled = true; // Disable input
-  }
-};
+    const inputs = div.getElementsByTagName('input');
+    for (let i = 0; i < inputs.length; i++) {
+      if (!inputs[i].classList.contains('unit')) {
+        inputs[i].value = ''; // Clear input value
+      }
+      inputs[i].disabled = true; // Disable input
+    }
+  };
 
 // Function to enable the form inputs inside the specified div
 const enableFormInputs = (div) => {
