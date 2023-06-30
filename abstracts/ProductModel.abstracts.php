@@ -96,7 +96,22 @@
             $productStatement->close();
             $attributeStatement->close();
             $this->closeConnection();
-        }      
+        }
+
+        public function getSku(){
+
+            $this->openConnection();
+
+            $sql = "SELECT SKU from products";
+            $stmt = $this->databaseConnection->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $sku = [];
+            while ($row = $result->fetch_assoc()) {
+                array_push($sku,$row['SKU']); // Assuming SKU is the column name in the result set
+            }
+            return $sku;
+        }
 
     }
     

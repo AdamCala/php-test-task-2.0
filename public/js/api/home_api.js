@@ -15,6 +15,7 @@ delete_button_action.addEventListener('click', () => {
     .then(response => {
         if (response.ok) {
             console.log('POST request successful');
+            location.reload();
         } else {
             throw new Error('Error making the POST request');
         }

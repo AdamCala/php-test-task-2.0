@@ -11,7 +11,6 @@ save_button_action.addEventListener('click', () => {
     const errorContainer = document.getElementById('error-container');
 
     // ! Clear error container
-    errorContainer.textContent = '';
     let error = false;
 
     // ^ Array of input values that have to be a number
@@ -47,16 +46,34 @@ save_button_action.addEventListener('click', () => {
         })
         .then(response => {
             if (response.ok) {
-                console.log('POST request successful');
+                return response.json(); // Assuming the response contains JSON data
             } else {
                 throw new Error('Error making the POST request');
+            }
+        })
+        .then(data => {
+            // Handle the response data
+            if (data === null) {
+                // Redirect to test-task-php2.0/ route
+                window.location.href = '/test-task-php2.0/';
+            } else {
+                // Display the array contents in errorContainer
+                errorContainer.innerHTML = ''; // Clear previous content
+
+                data.forEach(item => {
+                    const p = document.createElement('p');
+                    p.textContent = item;
+                    errorContainer.appendChild(p);
+                });
             }
         })
         .catch(error => {
             console.error(error);
         });
     }else{
-        errorContainer.textContent = 'Please, provide the data of indicated type';
+        const p = document.createElement('p');
+        p.textContent = 'Please, provide the data of indicated type';
+        errorContainer.appendChild(p);
     }
 
     

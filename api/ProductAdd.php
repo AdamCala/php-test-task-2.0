@@ -7,4 +7,4 @@
 
     $validation = new classes\ProductAdd();
     $test = $validation->addProductCheck();
-    var_dump($test);
+    echo json_encode($test);
