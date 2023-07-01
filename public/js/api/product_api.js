@@ -19,14 +19,14 @@ save_button_action.addEventListener('click', () => {
     const numberElementsArray = [];
     for (let element of numberElements) {
         const id = element.id;
-        const firstPart = id.split('-')[0];
-        numberElementsArray.push(firstPart);
+        numberElementsArray.push(id.toLowerCase());
     }
 
     // ^ Itarate over the input values and if the value has to be a number check if it is a number
     for (let entry of formData.entries()) {
-        if (numberElementsArray.includes(entry[0])) {
-        if (isNaN(Number(entry[1]))) {
+        console.log(entry);
+        if (numberElementsArray.includes(entry[0].toLowerCase())) {
+            if (isNaN(Number(entry[1]))) {
                 error = true;
             }
         }
@@ -38,7 +38,7 @@ save_button_action.addEventListener('click', () => {
     
     // * If there an error has not occurred send an api call, otherwise display an error
     if(!error){
-        fetch('test-task-php2.0/api/add', {
+        fetch('/api/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -55,8 +55,8 @@ save_button_action.addEventListener('click', () => {
         .then(data => {
             // Handle the response data
             if (data === null) {
-                // Redirect to test-task-php2.0/ route
-                window.location.href = '/test-task-php2.0/';
+                // Redirect to / route
+                window.location.href = '/';
             } else {
                 // Display the array contents in errorContainer
                 errorContainer.innerHTML = ''; // Clear previous content

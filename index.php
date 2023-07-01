@@ -1,13 +1,10 @@
 <?php
 
-$baseDir = '/test-task-php2.0';
+$baseDir = 'https://test-task-php2.000webhostapp.com';
 $request = $_SERVER['REQUEST_URI'];
-// var_dump($request);
 $baseUri = str_replace($baseDir, '', $request);
-// var_dump($baseUri);
 
 switch ($baseUri) {
-
     case '':
     case '/':
         require __DIR__ . '/views/home.php';

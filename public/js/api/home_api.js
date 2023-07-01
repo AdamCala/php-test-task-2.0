@@ -5,7 +5,7 @@ delete_button_action.addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked'); 
     const checkedIds = Array.from(checkboxes).map(checkbox => checkbox.name);
 
-    fetch('test-task-php2.0/api/del', {
+    fetch('https:/api/del', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ delete_button_action.addEventListener('click', () => {
     .then(response => {
         if (response.ok) {
             console.log('POST request successful');
-            location.reload();
+            window.location.href = '/';
         } else {
             throw new Error('Error making the POST request');
         }

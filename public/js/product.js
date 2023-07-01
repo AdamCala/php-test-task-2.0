@@ -2,12 +2,12 @@
 const add_button_link = document.getElementById('cancel-button-link');
 
 add_button_link.addEventListener('click', () => {
-  window.location.href = '/test-task-php2.0/';
+  window.location.href = '/';
 });
 
 // & SWITCH FORM INPUTS
 // Select option element
-const productType_input = document.getElementById('productType-input');
+const productType_input = document.getElementById('productType');
 
 // Default 1st option selected at the start
 const defaultValue = productType_input.options[0].value;

@@ -15,8 +15,8 @@
     <nav>
         <h1>Product Add</h1>
         <div id="navbar-buttons">
-            <button id="save-button-action">SAVE</button>
-            <button id="cancel-button-link">CANCEL</button>
+            <button id="save-button-action">Save</button>
+            <button id="cancel-button-link">Cancel</button>
         </div>
     </nav>
     <main>
