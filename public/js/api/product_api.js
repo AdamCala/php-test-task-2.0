@@ -2,13 +2,14 @@
 const save_button_action = document.getElementById('save-button-action');
 
 save_button_action.addEventListener('click', () => {
-    errorContainer.textContent = '';
+    
     // * Get form data
     const rawFormData = document.getElementById('product_form');
     const formData = new FormData(rawFormData);
 
     // ! Grab an error container and craete variable that checks if there are any errors
     const errorContainer = document.getElementById('error-container');
+    errorContainer.textContent = '';
 
     // ! Clear error container
     let error = false;

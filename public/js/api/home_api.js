@@ -1,5 +1,5 @@
 // & MASS DELETE ACTION
-const delete_button_action = document.getElementById('delete-button-action');
+const delete_button_action = document.getElementById('delete-product-btn');
 
 delete_button_action.addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked'); 

@@ -16,7 +16,7 @@
         <h1>Product List</h1>
         <div id="navbar-buttons">
             <button id="add-button-link">ADD</button>
-            <button id="delete-button-action">MASS DELETE</button>
+            <button id="delete-product-btn">MASS DELETE</button>
         </div>
     </nav>
     <main>

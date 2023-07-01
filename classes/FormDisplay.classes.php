@@ -31,10 +31,13 @@
                         <option value="Book" id="book">Book</option>
                     </select>
                 </div>
-                <div id="DVD-input-spec" class="hidden input-spec a-type-div">
-                    <label for="size-input">Size (MB)</label>
-                    <input type="text" name="Size" id="Size-input" class="number-input">
-                    <input type="hidden" name="Unit" value="MB" class="unit">
+                <div id="DVD-input-spec" class="hidden input-spec">
+                    <div class="a-type-div">
+                        <label for="size-input">Size (MB)</label>
+                        <input type="text" name="Size" id="Size-input" class="number-input">
+                        <input type="hidden" name="Unit" value="MB" class="unit">
+                    </div>
+                    <h7>Please provide size for the new CD (MB)</h7>
                 </div>
                 <div id='Furniture-input-spec' class="hidden input-spec">
                     <div class="a-type-div">
@@ -50,11 +53,15 @@
                         <label for="length-input">Length (CM)</label>
                         <input type="text" name="Length" id="Length-input" class="number-input"> 
                     </div>
+                    <h7>Please provide dimensions for the new furniture (CM)</h7>
                 </div>
-                <div id='Book-input-spec' class="hidden input-spec a-type-div">
-                    <label for="weight-input">Weight (KG)</label>
-                    <input type="text" name="Weight" id="Weight-input" class="number-input">
-                    <input type="hidden" name="Unit" value="KG" class="unit">
+                <div id='Book-input-spec' class="hidden input-spec">
+                    <div class="a-type-div">
+                        <label for="weight-input">Weight (KG)</label>
+                        <input type="text" name="Weight" id="Weight-input" class="number-input">
+                        <input type="hidden" name="Unit" value="KG" class="unit">
+                    </div>
+                    <h7>Please provide weight for the new book (KG)</h7>
                 </div>
             </form>
             <p id="error-container"></p>
