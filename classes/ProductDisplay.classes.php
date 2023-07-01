@@ -7,23 +7,24 @@
     class ProductDisplay extends ProductModel{
 
         public function displayProduct(){
-            $product = $this->getProducts();
+            $productObjects = $this->getProducts();
             ob_start();
             ?>
             <form id="delete_form">
-                <?php foreach ($product as $product_entry): ?>
-                    <div id="<?= $product_entry['SKU']; ?>" class="product-entry-div">
-                        <input type="checkbox" name="<?= $product_entry['SKU']; ?>" class="delete-checkbox"<?= $product_entry['SKU']; ?> form="delete_form">
+                <?php foreach ($productObjects as $product_entry): ?>
+                    <div id="<?= $product_entry->getSku(); ?>" class="product-entry-div">
+                        <input type="checkbox" name="<?= $product_entry->getSku(); ?>" class="delete-checkbox" form="delete_form">
                         <div>
-                            <p><?= $product_entry['SKU']; ?></p>
-                            <p><?= $product_entry['Name']; ?></p>
-                            <p><?= $product_entry['Price']; ?> $</p>
-                            <?php if (count($product_entry['Attributes']) > 1): ?>
+                            <p><?= $product_entry->getSku(); ?></p>
+                            <p><?= $product_entry->getName(); ?></p>
+                            <p><?= $product_entry->getPrice(); ?> $</p>
+                            <?php $attributes = $product_entry->getAttributes(); ?>
+                            <?php if (count($attributes) > 1): ?>
                                 Dimension:
-                                <?= implode('x', $product_entry['Attributes']); ?>
+                                <?= implode('x', $attributes); ?>
                             <?php else: ?>
-                                <?php foreach ($product_entry['Attributes'] as $Attribute => $value): ?>
-                                    <?= $Attribute; ?>:  <?= $value; ?> <?= $product_entry['Unit']; ?>
+                                <?php foreach ($attributes as $attribute => $value): ?>
+                                    <?= $attribute; ?>: <?= $value; ?> <?= $product_entry->getUnit(); ?>
                                 <?php endforeach; ?>
                             <?php endif; ?>
                         </div>

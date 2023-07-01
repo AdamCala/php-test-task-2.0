@@ -34,7 +34,7 @@
         // run the checkEmpty method and return the array
         public function runValidation($array){
             $this->checkEmpty($array);
-            $this->checkSku($array['sku']);
+            $this->checkSku($array['SKU']);
             if($this->errors){
                 return $this->errors;
              }

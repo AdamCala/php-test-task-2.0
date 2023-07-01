@@ -2,11 +2,14 @@
 
     namespace abstracts;
 
+    use classes\Product;
+
     abstract class ProductModel extends Database{
 
-        // * Returns an associative array of products with SKUs as the keys
+        // * Returns an array of product objects
         public function getProducts(){
             
+            $productObjects = [];
             $this->openConnection();
             $sql = "SELECT products.SKU,
                     products.Name,
@@ -24,6 +27,7 @@
             $rows = array();
 
             while ($row = $result->fetch_assoc()) {
+
                 $sku = $row['SKU'];
 
                 if (!isset($rows[$sku])) {
@@ -39,8 +43,12 @@
                 $value = $row['Value'];
                 $rows[$sku]['Attributes'][$attributeName] = $value;
             }
+            foreach($rows as $row){
+                $product = new Product($row);
+                array_push($productObjects,$product);
+            }
             $this->closeConnection();
-            return $rows;
+            return $productObjects;
         }
 
         public function deleteProducts($placeholders,$sku_values){
@@ -60,15 +68,15 @@
             return $result;
         }
 
-        public function addProducts($array) {
+        public function addProducts(Product $productObject) {
 
             $this->openConnection();
 
-            $sku = $array['sku'];
-            $name = $array['name'];
-            $price = $array['price'];
-            $productType = $array['productType'];
-            $unit = $array['unit'];
+            $sku = $productObject->getSku();
+            $name = $productObject->getName();
+            $price = $productObject->getPrice();
+            $unit = $productObject->getUnit();
+            $attributes = $productObject->getAttributes();
 
             // Prepare the SQL statement for inserting into the "products" table
             $sql ="INSERT INTO products (SKU, Name, Price) VALUES (?, ?, ?)";
@@ -81,14 +89,9 @@
             $attributeStatement = $this->databaseConnection->prepare($sql2);
 
             // Iterate over the remaining attributes in the array
-            foreach ($array as $attributeName => $value) {
-                // Skip the known attributes
-                if ($attributeName == 'sku' || $attributeName == 'name' || $attributeName == 'price' || $attributeName == 'unit' || $attributeName == 'productType') {
-                    continue;
-                }
-                $floatvalue = floatval($value);
+            foreach ($attributes as $attributeName => $value) {
                 // Insert the attribute into the "productattributes" table
-                $attributeStatement->bind_param("sdss", $sku, $floatvalue, $attributeName, $unit);
+                $attributeStatement->bind_param("sdss", $sku, $value, $attributeName, $unit);
                 $attributeStatement->execute();
             }
 

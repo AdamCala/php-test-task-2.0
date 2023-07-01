@@ -4,6 +4,7 @@
 
     use abstracts\ProductModel;
     use classes\ProductValidation;
+    use classes\Product;
 
     class ProductAdd extends ProductModel{
 
@@ -35,7 +36,8 @@
 
         // is the validation passed prepere product data to be added to the database and send it further
         private function callAddProduct(){
-            $this->addProducts($this->array);
+            $productObject = new Product($this->array);
+            $this->addProducts($productObject);
         }
 
     }

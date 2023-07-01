@@ -2,7 +2,7 @@
 const save_button_action = document.getElementById('save-button-action');
 
 save_button_action.addEventListener('click', () => {
-
+    errorContainer.textContent = '';
     // * Get form data
     const rawFormData = document.getElementById('product_form');
     const formData = new FormData(rawFormData);
@@ -71,9 +71,7 @@ save_button_action.addEventListener('click', () => {
             console.error(error);
         });
     }else{
-        const p = document.createElement('p');
-        p.textContent = 'Please, provide the data of indicated type';
-        errorContainer.appendChild(p);
+        errorContainer.textContent = 'Please, provide the data of indicated type';
     }
 
     
